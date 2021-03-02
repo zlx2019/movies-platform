@@ -1,0 +1,5 @@
+org.springframework.context.ApplicationContextInitializer=\
+  com.movies.log.config.TtlMDCAdapterInitializer
+
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.movies.log.config.LogAutoConfigure

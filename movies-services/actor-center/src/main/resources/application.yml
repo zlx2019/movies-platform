@@ -1,0 +1,20 @@
+spring:
+  #db 配置
+  datasource:
+    url: ${movies.datasource.url}
+    driver-class-name: ${movies.datasource.driver}
+    username: ${movies.datasource.username}
+    password: ${movies.datasource.password}
+    druid:
+      db-type: mysql
+  #json 的时间格式
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+#mp配置
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  type-aliases-package: com.movies.common.model
+  global-config:
+    db-config:
+      id-type: id_worker #雪花算法id

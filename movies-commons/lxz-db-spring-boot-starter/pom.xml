@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>movies-commons</artifactId>
+        <groupId>com.movies</groupId>
+        <version>1.0-LX</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>lxz-db-spring-boot-starter</artifactId>
+    <packaging>jar</packaging>
+    <description>
+        数据库通用组件模块《该项目使用Mysql + Mybatis-Plus》
+    </description>
+
+    <dependencies>
+        <!--通用数据依赖-->
+        <dependency>
+            <groupId>com.movies</groupId>
+            <artifactId>lxz-common-spring-boot-starter</artifactId>
+            <version>1.0-LX</version>
+        </dependency>
+
+        <!--Mybatis Plus依赖-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+        </dependency>
+        <!--生产环境使用 druid-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!--开发环境使用 p6spy-->
+        <dependency>
+            <groupId>p6spy</groupId>
+            <artifactId>p6spy</artifactId>
+        </dependency>
+
+        <!--Properties 语法提示-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+        </dependency>
+    </dependencies>
+</project>

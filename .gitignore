@@ -1,0 +1,25 @@
+.idea/
+logs/
+target/
+.txlcn/
+
+*.iml
+*.versionsBackup
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+rebel.xml
+
