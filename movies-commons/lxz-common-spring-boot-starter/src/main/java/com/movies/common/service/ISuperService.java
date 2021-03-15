@@ -3,6 +3,7 @@ package com.movies.common.service;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.movies.common.lock.DistributedLock;
+import com.movies.common.model.base.K;
 
 /**
  * 公共业务接口,实现一些公共API
@@ -35,4 +36,14 @@ public interface ISuperService<T> extends IService<T> {
      * @return
      */
     boolean constantSaveOrModify(T model,DistributedLock lock, String lockKey, Wrapper<T> conditionWrapper,String message);
+
+
+    /**
+     * 公共分页查询
+     * @Author lx Zhang.
+     * @Date 2021/3/15 11:29 下午
+     * @Param [current：当前页, size：页容量]
+     * @return com.movies.common.model.base.K
+     **/
+    K<T> listPage(Integer current, Integer size);
 }

@@ -12,4 +12,5 @@ import java.util.List;
 public interface IBannerService extends ISuperService<Banner> {
 
     List<Banner> testBannerList();
+
 }

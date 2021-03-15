@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.movies.rpc.FeignAutoConfigure,\
+  com.movies.rpc.RibbonAutoConfigure,\
+  com.movies.rpc.RestTemplateAutoConfigure

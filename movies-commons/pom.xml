@@ -16,6 +16,7 @@
         <module>lxz-log-spring-boot-starter</module>
         <module>lxz-cache-spring-boot-starter</module>
         <module>lxz-sentinel-spring-boot-starter</module>
+        <module>lxz-rpc-spring-boot-starter</module>
     </modules>
     <artifactId>movies-commons</artifactId>
     <description>公共模块父项目</description>

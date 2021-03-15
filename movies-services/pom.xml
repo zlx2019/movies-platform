@@ -36,6 +36,12 @@
             <artifactId>lxz-cache-spring-boot-starter</artifactId>
             <version>1.0-LX</version>
         </dependency>
+        <!--RPC组件-->
+        <dependency>
+            <groupId>com.movies</groupId>
+            <artifactId>lxz-rpc-spring-boot-starter</artifactId>
+            <version>1.0-LX</version>
+        </dependency>
 
 
         <!--配置模块-->

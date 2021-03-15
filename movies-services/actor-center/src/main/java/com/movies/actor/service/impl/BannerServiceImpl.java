@@ -24,4 +24,11 @@ public class BannerServiceImpl extends SuperServiceImpl<BannerMapper, Banner> im
     public List<Banner> testBannerList() {
         return bannerMapper.selectBannerList();
     }
+
+
+//    public R listPage(Integer current,Integer size){
+//        Page page = new Page<>(current, size);
+//        page = bannerMapper.selectMapsPage(page, null);
+//        return R.Success(page);
+//    }
 }

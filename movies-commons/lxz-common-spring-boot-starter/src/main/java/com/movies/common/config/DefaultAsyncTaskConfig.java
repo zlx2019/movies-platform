@@ -51,7 +51,7 @@ public class DefaultAsyncTaskConfig {
         executor.setMaxPoolSize(maxPoolSize);
         executor.setQueueCapacity(queueCapacity);
         executor.setThreadNamePrefix(threadNamePrefix);
-        //设置拒绝策略,当pool线程数达到MaxPoolSize时,由调用者处理该任务
+        //设置拒绝策略,当pool线程数达到MaxPoolSize时,由调用者处理该任务  || CustomThreadCallHandler 自定义拒绝策略
         executor.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy());
         executor.initialize();
         return executor;
