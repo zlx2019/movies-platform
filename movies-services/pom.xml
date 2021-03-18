@@ -42,22 +42,24 @@
             <artifactId>lxz-rpc-spring-boot-starter</artifactId>
             <version>1.0-LX</version>
         </dependency>
-
-
         <!--配置模块-->
         <dependency>
             <groupId>com.movies</groupId>
             <artifactId>movies-config</artifactId>
             <version>1.0-LX</version>
         </dependency>
-
         <!--自定义日志模块-->
         <dependency>
             <groupId>com.movies</groupId>
             <artifactId>lxz-log-spring-boot-starter</artifactId>
             <version>1.0-LX</version>
         </dependency>
-
+        <!--Zookeeper模块-->
+        <dependency>
+            <groupId>com.movies</groupId>
+            <artifactId>lxz-zk-spring-boot-starter</artifactId>
+            <version>1.0-LX</version>
+        </dependency>
         <!--mysql-->
         <dependency>
             <groupId>mysql</groupId>

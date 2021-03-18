@@ -83,6 +83,8 @@ public interface DistributedLock {
      */
     boolean lock(String key, long expire, int retryTimes, long sleepMillis);
 
+
+
     /**
      * 释放锁
      *

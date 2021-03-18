@@ -34,6 +34,8 @@
 
         <!--第三方工具包依赖版本-->
         <druid-starter>1.1.21</druid-starter>
+        <zookeeper.version>3.4.11</zookeeper.version>
+        <curator.version>4.2.0</curator.version>
         <p6spy.version>3.8.6</p6spy.version>
         <hutool-version>5.4.3</hutool-version>
         <pingyin4j.vsersion>2.5.0</pingyin4j.vsersion>
@@ -110,6 +112,24 @@
                 <artifactId>p6spy</artifactId>
                 <version>${p6spy.version}</version>
             </dependency>
+
+            <!--Zookeeper-->
+            <dependency>
+                <groupId>org.apache.zookeeper</groupId>
+                <artifactId>zookeeper</artifactId>
+                <version>${zookeeper.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-framework</artifactId>
+                <version>${curator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-recipes</artifactId>
+                <version>${curator.version}</version>
+            </dependency>
+
 
             <!-- 支付宝详细SDK -->
             <dependency>

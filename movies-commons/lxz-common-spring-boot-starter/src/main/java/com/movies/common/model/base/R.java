@@ -30,6 +30,9 @@ public class R <T> implements Serializable {
     public static <T> R<T> Success(T data){
         return new R<T>(data,CommonConst.SUCCESS,CommonConst.SUCCESS_CODE);
     }
+    public static <T> R<T>Success(){
+        return new R<T>(null,CommonConst.SUCCESS,CommonConst.SUCCESS_CODE);
+    }
     public static <T> R<T> Success(Integer code,T data){
         return new R<T>(data,CommonConst.SUCCESS,CommonConst.SUCCESS_CODE);
     }

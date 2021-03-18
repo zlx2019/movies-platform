@@ -2,6 +2,7 @@ package com.movies;
 
 import com.movies.actor.service.IBannerService;
 import com.movies.common.model.Banner;
+import com.movies.zookeeper.lock.ZkDistributedLock;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,8 @@ import java.util.List;
 public class MoviesActorTestApplication {
     @Autowired
     private IBannerService bannerService;
+    @Autowired
+    private ZkDistributedLock zkDistributedLock;
 
     @Test
     public void test(){
@@ -39,5 +42,14 @@ public class MoviesActorTestApplication {
     public void testBanner(){
         List<Banner> list = bannerService.testBannerList();
         System.out.println(list);
+    }
+
+    @Test
+    public void lock()throws Exception{
+        zkDistributedLock.lock("testlock1", 10);
+        for (int i = 0;i < 10;i++){
+            Thread.sleep(3000);
+            System.out.println(i);
+        }
     }
 }
