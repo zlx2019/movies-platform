@@ -3,31 +3,37 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>movies-services</artifactId>
+        <artifactId>movies-commons</artifactId>
         <groupId>com.movies</groupId>
         <version>1.0-LX</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>actor-center</artifactId>
     <packaging>jar</packaging>
+    <artifactId>lxz-search-spring-boot-starter</artifactId>
     <description>
-        演员业务模块
+        Search通用模块
     </description>
 
+    <!--依赖-->
     <dependencies>
-        <!--easyexcel-->
+        <!--Spring data Es依赖-->
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>easyexcel</artifactId>
-            <version>2.1.1</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
         </dependency>
+        <!--替换版本-->
+<!--        <dependency>-->
+<!--            <groupId>org.elasticsearch.client</groupId>-->
+<!--            <artifactId>elasticsearch-rest-high-level-client</artifactId>-->
+<!--            <version>6.8.0</version>-->
+<!--        </dependency>-->
 
-        <!--集成es-->
         <dependency>
             <groupId>com.movies</groupId>
-            <artifactId>lxz-search-spring-boot-starter</artifactId>
+            <artifactId>lxz-common-spring-boot-starter</artifactId>
             <version>1.0-LX</version>
         </dependency>
     </dependencies>
+
 
 </project>

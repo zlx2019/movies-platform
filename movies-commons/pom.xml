@@ -18,6 +18,7 @@
         <module>lxz-sentinel-spring-boot-starter</module>
         <module>lxz-rpc-spring-boot-starter</module>
         <module>lxz-zk-spring-boot-starter</module>
+        <module>lxz-search-spring-boot-starter</module>
     </modules>
     <artifactId>movies-commons</artifactId>
     <description>公共模块父项目</description>
