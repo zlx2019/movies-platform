@@ -15,6 +15,7 @@
     </description>
     <modules>
         <module>actor-center</module>
+        <module>search-center</module>
     </modules>
     <!--依赖-->
     <dependencies>

@@ -2,8 +2,10 @@ package com.movies.actor.controller;
 
 import com.movies.actor.service.IBannerService;
 import com.movies.cache.lock.CacheDistributedLock;
+import com.movies.common.feign.SearchService;
 import com.movies.common.model.base.K;
 import com.movies.common.model.base.R;
+import com.movies.common.so.LogIndexSo;
 import lombok.extern.slf4j.Slf4j;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
@@ -34,6 +36,8 @@ public class ActorController {
     private CacheDistributedLock cacheDistributedLock;
     @Autowired
     private RestHighLevelClient restHighLevelClient;
+    @Autowired
+    private SearchService searchService;
 
     @GetMapping("/page/{current}/{size}")
     public K findAllActor(@PathVariable Integer current, @PathVariable Integer size){
@@ -62,6 +66,16 @@ public class ActorController {
             e.printStackTrace();
             return R.Failed();
         }
+    }
+
+    @GetMapping("/test/log")
+    public R testLog(){
+        LogIndexSo so = new LogIndexSo();
+        so.setId(1000001L);
+        so.setIp("127.0.0.1");
+        so.setMethod("GET");
+        searchService.save(so);
+       return R.Success();
     }
 
 }

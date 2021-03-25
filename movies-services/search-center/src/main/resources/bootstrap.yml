@@ -1,0 +1,18 @@
+server:
+  port: 14001
+spring:
+  application:
+    name: search-service
+  cloud:
+    nacos:
+      #服务中心
+      discovery:
+        server-addr: 101.37.79.47
+        password: rootROOT1234
+      #配置中心
+      config:
+        server-addr: 101.37.79.47
+        password: rootROOT1234
+        file-extension: yml
+        shared-dataids: common.yml
+        refreshable-dataids: common.yml
