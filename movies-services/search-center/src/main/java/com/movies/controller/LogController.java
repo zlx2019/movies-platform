@@ -1,15 +1,16 @@
 package com.movies.controller;
 
+import com.google.common.collect.Lists;
+import com.movies.common.model.base.R;
 import com.movies.common.so.LogIndexSo;
 import com.movies.index.LogIndex;
 import com.movies.repository.LogRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
 
 /**
  * @author lx Zhang.
@@ -36,6 +37,13 @@ public class LogController {
         BeanUtils.copyProperties(logIndexSo,logs);
         logRepository.save(logs);
         log.info("save log is success!");
+    }
+
+    @GetMapping("/list")
+    public R list(){
+        Iterable<LogIndex> iterable = logRepository.findAll();
+        ArrayList<LogIndex> list = Lists.newArrayList(iterable);
+        return R.Success(list);
     }
 
 }

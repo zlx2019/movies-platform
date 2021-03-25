@@ -1,5 +1,7 @@
 package com.movies.index;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.movies.common.constant.CommonConst;
 import com.movies.search.common.IndexEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -50,7 +52,8 @@ public class LogIndex implements Serializable {
     private Long costTimes;
 
     /** 访问时间*/
-    @Field(type = FieldType.Date,format= DateFormat.date_time)
+    @Field(type = FieldType.Date,format = DateFormat.date_time)
+    @JsonFormat(pattern = CommonConst.DATETIME_FORMAT)
     private LocalDateTime accessTime;
 
     /** 请求参数*/

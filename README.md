@@ -7,6 +7,27 @@
 软件架构说明
     基于SpringBoot、SpringCloudAlibaba、MybatisPlus搭建架构
 
+####  模块介绍
+```lua
+movies-platform -- 父项目，公共依赖
+│  ├─movies-services-- 业务模块一级工程
+│  │  ├─search-center -- 搜索服务中心
+│  │  ├─actor-center -- 演员服务中心
+│  │─movies-commons -- 通用工具一级工程
+│  │  ├─lxz-common-spring-boot-starter -- 封装通用操作逻辑
+│  │  ├─lxz-db-spring-boot-starter -- 封装数据库通用操作逻辑
+│  │  ├─lxz-log-spring-boot-starter -- 封装log通用操作逻辑
+│  │  ├─lxz-cache-spring-boot-starter -- 封装Redis通用操作逻辑
+│  │  ├─lxz-rpc-spring-boot-starter -- 封装Ribbon和Feign的通用操作逻辑
+│  │  ├─lxz-sentinel-spring-boot-starter -- 封装Sentinel的通用操作逻辑
+│  │  ├─lxz-search-spring-boot-starter -- 封装elasticsearch通用操作逻辑
+│  │  ├─lxz-zk-spring-boot-starter -- 封装zookeeper通用操作逻辑
+│  ├─movies-config -- 配置中心
+│  ├─movies-doc -- 项目文档
+│  ├─movies-nacos -- 注册中心Nacos[8848]
+
+
+
 #### 安装教程
 
 1.  xxxx
