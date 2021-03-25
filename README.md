@@ -1,11 +1,11 @@
 # movies-platform
 
 #### 介绍
-架构学习 init 
+
 
 #### 软件架构
 软件架构说明
-
+    基于SpringBoot、SpringCloudAlibaba、MybatisPlus搭建架构
 
 #### 安装教程
 
