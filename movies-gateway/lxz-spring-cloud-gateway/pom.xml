@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>movies-gateway</artifactId>
+        <groupId>com.movies</groupId>
+        <version>1.0-LX</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>jar</packaging>
+    <artifactId>lxz-spring-cloud-gateway</artifactId>
+    <description>
+        微服务网关
+    </description>
+
+    <dependencies>
+        <!--Log-->
+        <dependency>
+            <groupId>com.movies</groupId>
+            <artifactId>lxz-log-spring-boot-starter</artifactId>
+            <version>1.0-LX</version>
+        </dependency>
+
+        <!--config-->
+        <dependency>
+            <groupId>com.movies</groupId>
+            <artifactId>movies-config</artifactId>
+            <version>1.0-LX</version>
+        </dependency>
+        <!--Redis-->
+        <dependency>
+            <groupId>com.movies</groupId>
+            <artifactId>lxz-cache-spring-boot-starter</artifactId>
+            <version>1.0-LX</version>
+        </dependency>
+        <!--Rpc-->
+        <dependency>
+            <groupId>com.movies</groupId>
+            <artifactId>lxz-rpc-spring-boot-starter</artifactId>
+            <version>1.0-LX</version>
+        </dependency>
+
+        <!--Sentinel-->
+        <dependency>
+            <groupId>com.movies</groupId>
+            <artifactId>lxz-sentinel-spring-boot-starter</artifactId>
+            <version>1.0-LX</version>
+        </dependency>
+
+        <!--sentinel 和 gateway的整合包-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-alibaba-sentinel-gateway</artifactId>
+        </dependency>
+
+        <!--Nacos-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+        </dependency>
+
+        <!--gateway-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+    </dependencies>
+
+</project>

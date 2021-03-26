@@ -2,6 +2,7 @@ package com.movies.actor.controller;
 
 import com.movies.actor.service.IBannerService;
 import com.movies.cache.lock.CacheDistributedLock;
+import com.movies.common.dto.ExampleDto;
 import com.movies.common.feign.SearchService;
 import com.movies.common.model.base.K;
 import com.movies.common.model.base.R;
@@ -14,10 +15,8 @@ import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 
@@ -76,6 +75,18 @@ public class ActorController {
         so.setMethod("GET");
         searchService.save(so);
        return R.Success();
+    }
+
+    /**
+     * 数据校验demo
+     * @Author lx Zhang.
+     * @Date 2021/3/26 1:24 下午
+     * @Param [dto]
+     * @return com.movies.common.model.base.R
+     **/
+    @PostMapping("/check/data")
+    public R checkData(@RequestBody @Validated ExampleDto dto){
+        return R.Success(dto);
     }
 
 }

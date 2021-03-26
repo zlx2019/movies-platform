@@ -10,8 +10,9 @@
     <!--子工程-->
     <modules>
         <module>movies-services</module><!--业务模块-->
-        <module>movies-commons</module><!--公共封装starter模块-->
-        <module>movies-config</module><!--配置模块-->
+        <module>movies-commons</module> <!--公共模块-->
+        <module>movies-config</module>  <!--配置模块-->
+        <module>movies-gateway</module> <!--服务网关-->
     </modules>
     <packaging>pom</packaging>
     <name>movies-platform</name>

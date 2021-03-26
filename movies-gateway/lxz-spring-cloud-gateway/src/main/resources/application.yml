@@ -1,0 +1,35 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  redis:
+    timeout: 10000
+  cloud:
+    #Sentinel 配置
+    sentinel:
+      transport:
+        dashboard: ${movies.sentinel.dashboard}
+      eager: true  #服务启动直接建立心跳连接
+    #gateway配置
+    gateway:
+      discovery:
+        locator:
+          enabled: true #开启从注册中心动态创建路由的功能,根据微服务名路由
+      globalcors:
+        #跨域
+        cors-configurations:
+          '[/**]': #匹配所有path请求
+            allowedOrigins: "*" #允许域名访问
+            #允许的请求方式GET,POST,PUT,DELETE
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+      #服务路由配置
+      routes:
+        - id: actor
+          uri: lb://actor-service #负载均衡分发请求
+          predicates:
+            - Path=/api-actor/**  #该服务前缀
+          filters:
+            - StripPrefix=1       #去除/api-actor
