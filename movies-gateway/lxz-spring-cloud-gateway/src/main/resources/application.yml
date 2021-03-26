@@ -19,6 +19,8 @@ spring:
         cors-configurations:
           '[/**]': #匹配所有path请求
             allowedOrigins: "*" #允许域名访问
+            allowed-headers: "*"
+            allow-credentials: true
             #允许的请求方式GET,POST,PUT,DELETE
             allowedMethods:
               - GET
@@ -27,7 +29,7 @@ spring:
               - DELETE
       #服务路由配置
       routes:
-        - id: actor
+        - id: actor-service
           uri: lb://actor-service #负载均衡分发请求
           predicates:
             - Path=/api-actor/**  #该服务前缀

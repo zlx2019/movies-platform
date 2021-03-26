@@ -7,6 +7,10 @@ package com.movies.common.constant;
  */
 public interface ServiceConst {
 
+    /** 网关*/
+    public static final String GATEWAY_SERVICE = "movies-gateway";
     /** 搜索服务*/
     public static final String SEARCH_SERVICE = "search-service";
+    /** 演员业务服务*/
+    public static final String ACTOR_SERVICE = "actor-service";
 }

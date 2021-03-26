@@ -1,9 +1,11 @@
 package com.movies.gateway.config;
 
 import com.movies.gateway.handler.DefaultSentinelBlockRequestHandler;
+import com.movies.gateway.handler.SentinelHandler;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.core.annotation.Order;
 
 /**
@@ -13,6 +15,7 @@ import org.springframework.core.annotation.Order;
  */
 @Configuration
 @Slf4j
+@Import(SentinelHandler.class)
 public class GatewayGlobalConfig {
 
 
