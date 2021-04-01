@@ -35,7 +35,7 @@ public class DefaultAsyncTaskConfig {
     /**
      * 线程池中的线程名称前缀
      */
-    private String threadNamePrefix = "zero-async-";
+    private String threadNamePrefix = "lxz-async-";
 
     /**
      * 自定义异步线程池

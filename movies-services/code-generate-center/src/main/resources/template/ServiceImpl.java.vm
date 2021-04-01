@@ -1,0 +1,27 @@
+package ${package}.service.impl;
+
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.stereotype.Service;
+import com.feiyan.common.model.PageResult;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+
+import java.util.List;
+import java.util.Map;
+import org.apache.commons.collections4.MapUtils;
+import lombok.extern.slf4j.Slf4j;
+
+import ${package}.${moduleName}.model.${className};
+import ${package}.${currentModelName}.mapper.${className}Mapper;
+import ${package}.${currentModelName}.service.I${className}Service;
+
+/**
+ * ${comments}
+ *
+ * @author ${author}
+ * @date ${date}
+ */
+@Slf4j
+@Service
+public class ${className}ServiceImpl extends ServiceImpl<${className}Mapper, ${className}> implements I${className}Service {
+
+}

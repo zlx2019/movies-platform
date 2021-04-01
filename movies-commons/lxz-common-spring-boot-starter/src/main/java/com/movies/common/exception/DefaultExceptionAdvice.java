@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import java.nio.file.AccessDeniedException;
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -42,6 +44,27 @@ public class DefaultExceptionAdvice {
     @ExceptionHandler(BusinessException.class)
     public R handleException(BusinessException e) {
         return defHandler(e.getMessage() == null ? "业务异常" : e.getMessage(), e);
+    }
+
+    /**
+     * AccessDeniedException异常处理返回json
+     * 返回状态码:403
+     */
+    @ResponseStatus(HttpStatus.FORBIDDEN)
+    @ExceptionHandler({AccessDeniedException.class})
+    public R badMethodExpressException(AccessDeniedException e) {
+        return defHandler("没有权限请求当前方法", e);
+    }
+
+
+    /**
+     * SQLException sql异常处理
+     * 返回状态码:500
+     */
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    @ExceptionHandler({SQLException.class})
+    public R handleSQLException(SQLException e) {
+        return defHandler("服务运行SQLException异常", e);
     }
 
     /**

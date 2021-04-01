@@ -7,5 +7,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author lx Zhang.
  * @date 2021/3/1 9:16 下午
  */
-public interface SupperMapper<T> extends BaseMapper<T> {
+public interface SuperMapper<T> extends BaseMapper<T> {
 }

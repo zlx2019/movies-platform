@@ -1,7 +1,7 @@
 package com.movies.actor.mapper;
 
 import com.movies.common.model.Banner;
-import com.movies.db.mapper.SupperMapper;
+import com.movies.db.mapper.SuperMapper;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.List;
  * @date 2021/3/1 11:00 下午
  */
 @Mapper
-public interface BannerMapper extends SupperMapper<Banner> {
+public interface BannerMapper extends SuperMapper<Banner> {
 
     List<Banner> selectBannerList();
 }

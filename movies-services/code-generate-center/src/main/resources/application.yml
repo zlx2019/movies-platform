@@ -1,0 +1,36 @@
+spring:
+  #db 配置
+  datasource:
+    url: ${movies.datasource.url}
+    driver-class-name: ${movies.datasource.driver}
+    username: ${movies.datasource.username}
+    password: ${movies.datasource.password}
+    druid:
+      db-type: mysql
+#mp配置
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  type-aliases-package: com.movies.common.model
+  global-config:
+    db-config:
+      id-type: id_worker #雪花算法id
+# xxl 配置
+xxl:
+  job:
+    ### 执行器通讯TOKEN [选填]：非空时启用；
+    accessToken:
+    adminAddresses: ${xxl.host}
+    ### 执行器AppName [选填]：执行器心跳注册分组依据；为空则关闭自动注册
+    executorAppname: movies-xxl-job-executor
+    ### 执行器注册 [选填]：优先使用该配置作为注册地址，为空时使用内嵌服务 ”IP:PORT“ 作为注册地址。从而更灵活的支持容器类型执行器动态IP和动态映射端口问题。
+    #address: 127.0.0.1
+    executorAddress:
+    ### 执行器IP [选填]：默认为空表示自动获取IP，多网卡时可手动设置指定IP，该IP不会绑定Host仅作为通讯实用；地址信息用于 "执行器注册" 和 "调度中心请求并触发任务"；
+    #ip: 127.0.0.1
+    executorIp:
+    ### 执行器端口号 [选填]：小于等于0则自动获取；默认端口为9999，单机部署多个执行器时，注意要配置不同执行器端口；
+    executorPort: 9999
+    ### 执行器运行日志文件存储磁盘路径 [选填] ：需要对该路径拥有读写权限；为空则使用默认路径；
+    logpath: /usr/local/xxl/log/
+    ### 执行器日志文件保存天数 [选填] ： 过期日志自动清理, 限制值大于等于3时生效; 否则, 如-1, 关闭自动清理功能；
+    logretentiondays: 3

@@ -1,0 +1,17 @@
+package ${package}.service;
+
+import ${package}.${moduleName}.model.${className};
+import com.feiyan.common.model.PageResult;
+import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.Map;
+
+/**
+ * ${comments}
+ *
+ * @author ${author}
+ * @date ${date}
+ */
+public interface I${className}Service extends IService<${className}> {
+}
+
