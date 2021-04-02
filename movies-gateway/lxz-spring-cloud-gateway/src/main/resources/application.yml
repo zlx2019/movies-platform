@@ -27,11 +27,42 @@ spring:
               - POST
               - PUT
               - DELETE
+
+      #全局配置熔断: 服务未开启、连接超时(20s)等
+      default-filters:
+        #服务降级 路由超时后降级
+        - name: Hystrix
+          args:
+            name: default
+            fallbackUri: forward:/default/fallback
+
       #服务路由配置
       routes:
+        #演员服务
         - id: actor-service
           uri: lb://actor-service #负载均衡分发请求
           predicates:
             - Path=/api-actor/**  #该服务前缀
           filters:
-            - StripPrefix=1       #去除/api-actor
+            - StripPrefix=1
+        # 定时任务服务
+        - id: code-generate-service
+          uri: lb://code-generate-service #负载均衡分发请求
+          predicates:
+            - Path=/api-code/**  #该服务前缀
+          filters:
+            - StripPrefix=1
+        #文件服务
+        - id: file-service
+          uri: lb://file-service #负载均衡分发请求
+          predicates:
+            - Path=/api-file/**  #该服务前缀
+          filters:
+            - StripPrefix=1
+        #搜索服务
+        - id: search-service
+          uri: lb://search-service #负载均衡分发请求
+          predicates:
+            - Path=/api-search/**  #该服务前缀
+          filters:
+            - StripPrefix=1

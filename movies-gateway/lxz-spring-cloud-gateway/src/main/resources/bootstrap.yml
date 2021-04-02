@@ -9,6 +9,10 @@ spring:
       discovery:
         server-addr: 101.37.79.47
         password: rootROOT1234
+        #指定命名空间
+        namespace: d5dda495-a002-4a0e-aa78-b56ca1f4c59b
+        #指定分组
+        group: DEV_GROUP
       #配置中心
       config:
         server-addr: 101.37.79.47
@@ -16,3 +20,7 @@ spring:
         file-extension: yml
         shared-dataids: common.yml
         refreshable-dataids: common.yml
+        #指定命名空间
+        namespace: d5dda495-a002-4a0e-aa78-b56ca1f4c59b
+        #指定分组
+        group: DEV_GROUP

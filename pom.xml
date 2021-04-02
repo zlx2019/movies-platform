@@ -59,12 +59,12 @@
         <commons-io.version>2.6</commons-io.version>
         <httpclient.version>4.5.1</httpclient.version>
         <aliyun-java-sdk-core.version>4.3.3</aliyun-java-sdk-core.version>
-        <aliyun-sdk-oss.version>3.1.0</aliyun-sdk-oss.version>
         <aliyun-java-sdk-vod.version>2.15.2</aliyun-java-sdk-vod.version>
         <aliyun-java-vod-upload.version>1.4.11</aliyun-java-vod-upload.version>
         <aliyun-sdk-vod-upload.version>1.4.11</aliyun-sdk-vod-upload.version>
         <commons-dbutils.version>1.7</commons-dbutils.version>
         <alipay.version>4.10.0.ALL</alipay.version>
+        <aliyun-sdk-oss.version>3.8.0</aliyun-sdk-oss.version>
 
         <!--参数-->
         <docker.java.opts>-Xms128m -Xmx128m</docker.java.opts>
@@ -231,9 +231,8 @@
             <dependency>
                 <groupId>com.aliyun.oss</groupId>
                 <artifactId>aliyun-sdk-oss</artifactId>
-                <version>${aliyun.oss.version}</version>
+                <version>${aliyun-sdk-oss.version}</version>
             </dependency>
-
             <!--日期时间工具-->
             <dependency>
                 <groupId>joda-time</groupId>
@@ -274,11 +273,6 @@
                 <groupId>com.aliyun</groupId>
                 <artifactId>aliyun-java-sdk-core</artifactId>
                 <version>${aliyun-java-sdk-core.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.aliyun.oss</groupId>
-                <artifactId>aliyun-sdk-oss</artifactId>
-                <version>${aliyun-sdk-oss.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.aliyun</groupId>

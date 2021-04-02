@@ -17,6 +17,7 @@
         <module>actor-center</module>
         <module>search-center</module>
         <module>code-generate-center</module>
+        <module>file-center</module>
     </modules>
     <!--依赖-->
     <dependencies>

@@ -1,0 +1,25 @@
+spring:
+  #db 配置
+  datasource:
+    url: ${movies.datasource.url}
+    driver-class-name: ${movies.datasource.driver}
+    username: ${movies.datasource.username}
+    password: ${movies.datasource.password}
+    druid:
+      db-type: mysql
+#mp配置
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  type-aliases-package: com.movies.common.model
+  global-config:
+    db-config:
+      id-type: id_worker #雪花算法id
+movies:
+  file-conf:
+    type: aliyun
+    oss:
+      access-key: ${aliyun.accessKey}
+      accessKeySecret: ${aliyun.accessKeySecret}
+      endpoint: ${aliyun.endpoint}
+      bucketName: ${aliyun.bucketName}
+      domain: ${img.prefix}
