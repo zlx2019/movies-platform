@@ -1,12 +1,17 @@
 package com.movies.generator.handler;
 
-import com.xxl.job.core.biz.model.ReturnT;
+import com.movies.cache.template.CacheTemplate;
 import com.xxl.job.core.context.XxlJobHelper;
 import com.xxl.job.core.handler.annotation.XxlJob;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
+ * 缓存相关定时任务
+ * @author lx Zhang.
+ * @date 2021/4/2 11:57 上午
+ *
  * XxlJob开发示例（Bean模式）
  *
  * 开发步骤：
@@ -19,25 +24,22 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @Slf4j
-public class DemoHandler {
+public class CacheHandler {
+
+    @Autowired
+    private CacheTemplate cacheTemplate;
 
     /**
-     * 1、简单任务示例（Bean模式）
-     * value: JobHandler
-     * init: 初始化方法
-     * destroy: 销毁方法
+     * 清除Redis缓存数据
      * @Author lx Zhang.
-     * @Date 2021/4/1 10:31 下午
+     * @Date 2021/4/2 11:58 上午
+     * @return void
      **/
-    @XxlJob(value = "demoPrintlnJobHandler")
-    public ReturnT<String> demoJobHandler() throws Exception {
-        XxlJobHelper.log("XXL-JOB, Hello World.");
-
-        for (int i = 0; i < 5; i++) {
-            log.info("job :{}",i);
-        }
-        // default success
-        return new ReturnT<>(ReturnT.SUCCESS_CODE,"执行完成!");
+    @XxlJob(value = "flushCacheHandler")
+    public void flushCache(){
+        log.info("[flushCacheHandler]任务开始");
+        XxlJobHelper.log("[flushCacheHandler]任务开始");
+        cacheTemplate.flushDB();
+        log.info("[flushCacheHandler]任务结束");
     }
-
 }

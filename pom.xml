@@ -65,6 +65,10 @@
         <aliyun-sdk-vod-upload.version>1.4.11</aliyun-sdk-vod-upload.version>
         <commons-dbutils.version>1.7</commons-dbutils.version>
         <alipay.version>4.10.0.ALL</alipay.version>
+
+        <!--参数-->
+        <docker.java.opts>-Xms128m -Xmx128m</docker.java.opts>
+        <output.jar.directory>/Users/fly/Documents/fy-student/</output.jar.directory>
     </properties>
 
 

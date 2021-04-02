@@ -2,6 +2,7 @@
 logs/
 target/
 .txlcn/
+lib/
 
 *.iml
 *.versionsBackup
@@ -22,4 +23,5 @@ gen
 out
 gen
 rebel.xml
+*.bak
 
